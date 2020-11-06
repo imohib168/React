@@ -1,0 +1,16 @@
+.err-box button {
+    background-color: rgba(255, 0, 0, 0.2);
+    border: 3px solid red;
+    padding: 8px 32px 8px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+span {
+    font-size: 21px;
+    margin-left: 8px;
+}
+
+.fa-exclamation-triangle {
+    color: red;
+}
