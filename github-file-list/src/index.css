@@ -1,21 +1,3 @@
-/* .file-list {
-    border: 1px solid black;
-    border-collapse: collapse;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 980px;
-    font-family: sans-serif;
-}
-
-.file-list td {
-    border-top: 1px solid #ccc;
-}
-
-.file-name {
-    padding: 4px;
-    max-width: 180px;
-} */
-
 .file-list {
     font-family: Helvetica, sans-serif;
     width: 100%;
@@ -24,21 +6,25 @@
     margin: 0 auto;
     border: 1px solid #ccc;
     border-collapse: collapse;
+    display: flex;
+    flex-direction: column;
 }
 
-.file-list-item td {
-    border-top: 1px solid #ccc;
+.file-list-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
+}
+
+.fileNameAndFileIcon {
+    display: flex;
+    margin: 0 5px;
 }
 
 .file-name {
-    padding: 4px;
-    max-width: 180px;
-    border-top: 1px solid #ccc;
-}
-
-.file-icon {
-    width: 17px;
-    padding-left: 4px;
+    margin-left: 5px;
 }
 
 .file-icon .fa-folder {
@@ -48,5 +34,5 @@
 .commit-message {
     max-width: 442px;
     padding-left: 10px;
-    overflow: hidden;   
+    overflow: hidden;
 }

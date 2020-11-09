@@ -1,18 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Time from './Time'
+
 import PropTypes from 'prop-types';
 
 import './index.css'
 
 const FileList = ({ files }) => (
-    <table className="file-list">
-        <tbody>
-            {files.map(file => (
-                <FileListItem key={file.id} file={file} />
-            ))}
-        </tbody>
-    </table>
+    <div className="file-list">
+        {/* <tbody> */}
+        {files.map(file => (
+            <FileListItem key={file.id} file={file} />
+        ))}
+        {/* </tbody> */}
+    </div>
 );
 
 FileList.propTypes = {
@@ -20,10 +22,17 @@ FileList.propTypes = {
 }
 
 const FileListItem = ({ file }) => (
-    <tr className="file-list-item">
-        <FileName file={file} />
-        <CommitMessage commit={file.latestCommit} />
-    </tr>
+    <div className="file-list-item">
+        <div>
+            <FileName file={file} />
+        </div>
+        <div>
+            <CommitMessage commit={file.latestCommit} />
+        </div>
+        <div>
+            <Time time={file.updatedAt} />
+        </div>
+    </div>
 );
 FileListItem.propTypes = {
     file: PropTypes.object.isRequired
@@ -35,9 +44,9 @@ function FileIcon({ file }) {
         icon = "fa-folder";
     }
     return (
-        <td className="file-icon">
+        <div className="file-icon">
             <i className={`fa ${icon}`} />
-        </td>
+        </div>
     )
 }
 FileIcon.propTypes = {
@@ -46,10 +55,14 @@ FileIcon.propTypes = {
 
 function FileName({ file }) {
     return (
-        <>
-            <FileIcon file={file} />
-            <td className="file-name">{file.name}</td>
-        </>
+        <div className="fileNameAndFileIcon">
+            <div>
+                <FileIcon file={file} />
+            </div>
+            <div className="file-name">
+                {file.name}
+            </div>
+        </div>
     )
 }
 FileName.propTypes = {
@@ -57,9 +70,9 @@ FileName.propTypes = {
 }
 
 const CommitMessage = ({ commit }) => (
-    <td className="commit-message">
+    <div className="commit-message">
         {commit.message}
-    </td>
+    </div>
 );
 CommitMessage.propTypes = {
     commit: PropTypes.object.isRequired
