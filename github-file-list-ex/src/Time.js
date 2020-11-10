@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Moment from 'moment'
 
 function Time({ time }) {
@@ -9,10 +8,6 @@ function Time({ time }) {
             {timeString}
         </div>
     )
-}
-
-Time.propTypes = {
-    time: PropTypes.string.isRequired
 }
 
 export default Time

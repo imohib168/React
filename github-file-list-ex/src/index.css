@@ -1,0 +1,25 @@
+.file-list {
+    border: 1px solid lightgray;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.file-list-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgrey;
+    padding: 5px;
+    align-items: center;
+}
+
+.file-name {
+    display: flex;
+}
+
+.file {
+    margin-left: 3px;
+}
+
+.fa-folder {
+    color: cornflowerblue;
+}
