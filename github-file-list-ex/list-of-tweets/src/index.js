@@ -1,17 +1,52 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import Tweet from './Tweet'
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+const TweetList = ({ tweets }) => (
+    <div>
+        {tweets.map(tweet => (
+            <Tweet key={tweet.id} tweet={tweet} />
+        ))}
+    </div>
+)
+
+const Tweets = [
+    {
+        message: "Something about cats.",
+        gravatar: "xyz",
+        author: {
+            handle: "imohib168",
+            name: "Mohib Ismail"
+        },
+        likes: 2,
+        retweets: 17,
+        timestamp: "2020-09-30 21:24:37"
+    },
+    {
+        message: "Something about Dogs.",
+        gravatar: "xyz",
+        author: {
+            handle: "imohib168",
+            name: "Mohib Ismail"
+        },
+        likes: 2,
+        retweets: 17,
+        timestamp: "2020-09-30 21:24:37"
+
+    },
+    {
+        message: "Something about wolves.",
+        gravatar: "xyz",
+        author: {
+            handle: "imohib168",
+            name: "Mohib Ismail"
+        },
+        likes: 2,
+        retweets: 17,
+        timestamp: "2020-09-30 21:24:37"
+    }
+]
+
+ReactDOM.render(<TweetList tweets={Tweets} />, document.getElementById("root"))
