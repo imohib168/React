@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 
 import FileName from './FileName'
 import CommitMessage from './CommitMessage'
@@ -13,5 +15,10 @@ function FileListItem({ file }) {
         </div>
     )
 }
+
+FileListItem.propTypes = {
+    file: PropTypes.object.isRequired
+};
+
 
 export default FileListItem

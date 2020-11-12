@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import FileListItem from './FileListItem'
 
+import PropTypes from 'prop-types'
+
 import './index.css'
 
 function FileList({ files }) {
@@ -13,6 +15,10 @@ function FileList({ files }) {
             ))}
         </div>
     )
+}
+
+FileList.propTypes = {
+    files: PropTypes.array
 }
 
 const testFiles = [

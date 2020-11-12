@@ -1,5 +1,6 @@
 import React from 'react'
 import Moment from 'moment'
+import PropTypes from 'prop-types'
 
 function Time({ time }) {
     const timeString = Moment(time).fromNow();
@@ -9,5 +10,10 @@ function Time({ time }) {
         </div>
     )
 }
+
+Time.propTypes = {
+    time: PropTypes.string.isRequired
+};
+
 
 export default Time

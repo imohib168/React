@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function FileIcon({ file }) {
     let icon = "fa-file-text-o";
@@ -11,5 +12,10 @@ function FileIcon({ file }) {
         </div>
     )
 }
+
+FileIcon.propTypes = {
+    file: PropTypes.object.isRequired
+};
+
 
 export default FileIcon

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import FileIcon from './FileIcon'
 
@@ -14,5 +15,9 @@ function FileName({ file }) {
         </div>
     )
 }
+
+FileName.propTypes = {
+    file: PropTypes.object.isRequired
+};
 
 export default FileName
